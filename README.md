@@ -77,6 +77,34 @@ Handles the logic for building structured data, split into three evidence types:
 - For custom evidence types, simply add a new `collect_eX()` method and include it in your workflow.
 
 ---
+### 📦 `base_client.py`
+
+Provides a foundational HTTP client for interacting with any REST API. This class is extended by `client.py` and should not typically require any modifications.
+
+#### ✅ Purpose
+
+- Handles generic `GET` and `POST` requests
+- Manages token-based authorization headers
+- Centralizes error handling with clear, descriptive messages
+
+#### Key Methods
+
+- `get(endpoint)`  
+  Sends a GET request to `base_url/endpoint` with optional Bearer token header.
+
+- `post(endpoint, data)`  
+  Sends a POST request with a JSON payload to `base_url/endpoint`.
+
+- `handle_error(response)`  
+  Interprets and raises meaningful exceptions based on HTTP response status codes.
+
+#### 🔄 What to change
+
+> You usually **don't need to change anything** in this file. It's a reusable base class that can support different APIs as long as the endpoints follow standard REST principles.
+
+
+---
+
 
 ### 🧪 `main.py`
 
