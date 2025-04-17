@@ -26,7 +26,6 @@ def main():
                     result = method()
                     print(f"E{i} result:")
                     print(json.dumps(result, indent=2))
-                    print(f"length of result is : {len(result)}")
                 else:
                     print(f"Method {method_name} not found.")
             except Exception as e:
